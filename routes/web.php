@@ -14,9 +14,12 @@
 use Illuminate\Support\Facades\Auth;
 use \Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/','ProductController@index')->name('index');
+Route::get('/product', 'ProductController@index')->name('product.index');
 
 Auth::routes();
 

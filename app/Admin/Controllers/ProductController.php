@@ -71,7 +71,7 @@ class ProductController extends AdminController
         $form = new Form(new Product());
 
         $form->text('title', __('Title'))->rules('required');
-        $form->textarea('description', __('Description'))->rules('required');
+        $form->ckeditor('description', __('Description'))->rules('required');
         $form->image('image', __('Image'))->rules('required');
         $state = [
             'on' => ['value' => 1, 'text' => '是', 'color' => 'success'],
@@ -89,5 +89,13 @@ class ProductController extends AdminController
             ->header('商品管理')
             ->description('管理所有賣場商品')
             ->body($this->grid());
+    }
+
+    public function edit($id, Content $content)
+    {
+        return $content
+            ->header('編輯商品')
+            ->description('可於此頁面修改商品內容')
+            ->body($this->form()->edit($id));
     }
 }

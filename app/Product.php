@@ -12,4 +12,9 @@ class Product extends Model
         $url = Storage::url($this->attributes['image']);
         return $url;
     }
+
+    public function carts()
+    {
+        return $this->hasMany('App\Cart');
+    }
 }

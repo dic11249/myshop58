@@ -27,6 +27,8 @@ Route::get('/','ProductController@index')->name('index');
 Route::get('/product', 'ProductController@index')->name('product.index');
 //商品詳情頁面
 Route::get('/product/{product}', 'ProductController@show')->name('product.show');
+//新增商品至購物車
+Route::post('/cart', 'CartController@store')->name('cart.store');
 
 Auth::routes();
 

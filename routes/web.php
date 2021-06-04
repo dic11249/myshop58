@@ -18,8 +18,15 @@ use \Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+//同一個參數限制格式
+Route::pattern('product', '[0-9]+');
+
+//商品列表
 Route::get('/','ProductController@index')->name('index');
+//商品列表
 Route::get('/product', 'ProductController@index')->name('product.index');
+//商品詳情頁面
+Route::get('/product/{product}', 'ProductController@show')->name('product.show');
 
 Auth::routes();
 

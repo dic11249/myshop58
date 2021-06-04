@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use Exception;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -47,7 +48,10 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        if (!$product->on_sale) {
+            throw new Exception('商品未上架');
+        }
+        return view('product.show', compact('product'));
     }
 
     /**

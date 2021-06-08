@@ -4,9 +4,18 @@ namespace App\Observers;
 
 use App\Cart;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class CartObserver
 {
+
+    public function creating(Cart $cart)
+    {
+        if (Auth::check()) {
+            $cart->user_id = Auth::id();
+        }
+    }
+
     /**
      * Handle the cart "created" event.
      *
@@ -14,6 +23,13 @@ class CartObserver
      * @return void
      */
     public function created(Cart $cart)
+    {
+         if (Auth::check()) {
+            $cart->user_id = Auth::id();
+        }
+    }
+
+    public function updating(Cart $cart)
     {
         if (Auth::check()) {
             $cart->user_id = Auth::id();
@@ -52,7 +68,9 @@ class CartObserver
      */
     public function restored(Cart $cart)
     {
-        //
+        if (Auth::check()) {
+            $cart->user_id = Auth::id();
+        }
     }
 
     /**

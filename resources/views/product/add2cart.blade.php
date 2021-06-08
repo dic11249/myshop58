@@ -1,5 +1,5 @@
 $('.btn-add-to-cart').click(function () {
-    console.log($(this).data('id') + ' = ' + $('input[name=amount]').val());
+    console.log(' user_id '+ $(this).data('id') + ' = amount '  + $('input[name=amount]').val());
     axios.post('{{ route('cart.store') }}', {
         product_id: $(this).data('id'),
         amount: $('input[name=amount]').val(),

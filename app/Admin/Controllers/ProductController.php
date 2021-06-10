@@ -31,7 +31,13 @@ class ProductController extends AdminController
         $grid->column('title', __('Title'));
         $grid->column('description', __('Description'));
         $grid->column('image', __('Image'));
-        $grid->column('on_sale', __('On sale'));
+        $grid->column('on_sale', __('On sale'))->display(function ($on_sale){
+            if($on_sale) {
+                return "是";
+            } else {
+                return "否";
+            }
+        });
         $grid->column('price', __('Price'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));

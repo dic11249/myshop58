@@ -14,9 +14,11 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $carts = $request->user()->carts()->get();
+        return view('cart.index', compact('carts'));
+
     }
 
     /**

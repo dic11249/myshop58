@@ -1,4 +1,4 @@
-# myshop58
+# myshop58(Laravel簡單商城+購物車專案)
 
 ## 安裝方法
 1. git clone https://github.com/dic11249/myshop58 myshop

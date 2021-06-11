@@ -27,13 +27,13 @@ class OrderController extends AdminController
     {
         $grid = new Grid(new Order());
 
-        $grid->column('id', __('Id'));
-        $grid->column('user_id', __('User id'));
-        $grid->column('address', __('Address'));
-        $grid->column('total', __('Total'));
-        $grid->column('closed', __('Closed'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->id('編號');
+        $grid->user_id('使用者編號');
+        $grid->address('寄送地址');
+        $grid->total('總計');
+        $grid->closed('是否關閉');
+        $grid->created_at('建立時間');
+        $grid->updated_at('更新時間');
 
         return $grid;
     }

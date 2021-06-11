@@ -34,6 +34,10 @@ Route::post('/cart', 'CartController@store')->name('cart.store');
 Route::get('/cart', 'CartController@index')->name('cart.index');
 //移除購物車商品
 Route::delete('/cart/{id}', 'CartController@destroy')->name('cart.destroy');
+//儲存訂單
+Route::post('/order/store', 'OrderController@store')->name('order.store');
+//訂單列表
+Route::get('/order', 'OrderController@index')->name('order.index');
 
 Auth::routes();
 

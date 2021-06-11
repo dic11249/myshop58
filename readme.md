@@ -14,10 +14,10 @@
 
 ## 使用技術
 
-- 使用Laravel5.8
-- 使用MySQL資料庫
-- 使用HTML/CSS/JavaScript/BootStrap4
-- 使用laravel-admin(後台管理)
+- Laravel5.8
+- MySQL資料庫
+- HTML/CSS/JavaScript/BootStrap4
+- laravel-admin(後台管理)
 
 ## 功能簡介
 

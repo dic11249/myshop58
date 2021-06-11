@@ -47,9 +47,6 @@
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
-                            </a>                           
-                            <a class="dropdown-item" href="/home">
-                                個人頁面
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

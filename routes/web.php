@@ -20,6 +20,7 @@ use \Illuminate\Support\Facades\Route;
 
 //同一個參數限制格式
 Route::pattern('product', '[0-9]+');
+Route::pattern('id', '[0-9]+');
 
 //商品列表
 Route::get('/','ProductController@index')->name('index');
@@ -31,6 +32,8 @@ Route::get('/product/{product}', 'ProductController@show')->name('product.show')
 Route::post('/cart', 'CartController@store')->name('cart.store');
 //查看購物車商品
 Route::get('/cart', 'CartController@index')->name('cart.index');
+//移除購物車商品
+Route::delete('/cart/{id}', 'CartController@destroy')->name('cart.destroy');
 
 Auth::routes();
 
